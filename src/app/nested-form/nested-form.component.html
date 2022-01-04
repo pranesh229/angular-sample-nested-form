@@ -1,0 +1,41 @@
+<div [formGroup]="nestedFormGroup">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" type="text" formControlName="name" />
+    <mat-error *ngIf="nestedFormGroup.controls['name'].hasError('nameInvalid') && !nestedFormGroup.controls['name'].hasError('required')">
+      Name is <strong>invalid</strong>
+    </mat-error>
+    <mat-error *ngIf="nestedFormGroup.controls['name'].hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input matInput placeholder="Phone" type="tel" formControlName="phone" />
+    <mat-error *ngIf="nestedFormGroup.controls['phone'].hasError('pattern') && !nestedFormGroup.controls['phone'].hasError('required')">
+      Phone Number is <strong>invalid</strong>
+    </mat-error>
+    <mat-error *ngIf="nestedFormGroup.controls['phone'].hasError('required')">
+      Phone is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" type="email" formControlName="email" />
+    <mat-error *ngIf="nestedFormGroup.controls['email'].hasError('email') && !nestedFormGroup.controls['email'].hasError('required')">
+      Email is <strong>Invalid</strong>
+    </mat-error>
+    <mat-error *ngIf="nestedFormGroup.controls['email'].hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+
+  </mat-form-field>
+  <button
+    mat-button
+    type="button"
+    (click)="deleteUserDetails()"
+    color="primary"
+  >
+    Delete User Details
+  </button>
+</div>

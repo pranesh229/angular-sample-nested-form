@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/micro-app1'),
+      dir: require('path').join(__dirname, './coverage/angular-sample-nested-form'),
       subdir: '.',
       reporters: [
         { type: 'html' },
